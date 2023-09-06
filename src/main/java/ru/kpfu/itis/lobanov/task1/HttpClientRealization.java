@@ -58,13 +58,11 @@ public class HttpClientRealization implements HttpClient {
 
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Accept", "application/json");
-        connection.setRequestProperty("Authorization", clientToken);
+        connection.setRequestProperty("Authorization", "Bearer " + clientToken);
 
         connection.setDoOutput(true);
 
         setMethodParams(params, connection);
-
-        System.out.println(connection.getResponseCode());
 
         return getContent(connection);
     }
@@ -84,6 +82,7 @@ public class HttpClientRealization implements HttpClient {
     private void setMethodParams(Map<String, String> params, HttpURLConnection connection) throws IOException {
         String paramsJson = getParamsJson(params);
 
+        if (paramsJson == null) return;
         try (OutputStream outputStream = connection.getOutputStream()) {
             byte[] input = paramsJson.getBytes(StandardCharsets.UTF_8);
             outputStream.write(input, 0, input.length);
@@ -104,6 +103,7 @@ public class HttpClientRealization implements HttpClient {
     }
 
     private String getParamsJson(Map<String, String> params) {
+        if (params.isEmpty()) return null;
         StringBuilder paramsJson = new StringBuilder();
 
         paramsJson.append('{');
