@@ -1,4 +1,4 @@
-package ru.kpfu.itis.lobanov;
+package ru.kpfu.itis.lobanov.task1;
 
 import java.io.IOException;
 import java.util.Map;

@@ -55,7 +55,7 @@
       <envs>
         <env name="siteToken" value="85c797eccab2c417819bb9e0b755ef7ee142d5a311bc5eaaf174aafc7b88b66d" />
       </envs>
-      <option name="MAIN_CLASS_NAME" value="ru.kpfu.itis.lobanov.Main" />
+      <option name="MAIN_CLASS_NAME" value="ru.kpfu.itis.lobanov.task1.Main" />
       <module name="HttpClient" />
       <option name="PROGRAM_PARAMETERS" value="85c797eccab2c417819bb9e0b755ef7ee142d5a311bc5eaaf174aafc7b88b66d" />
       <method v="2">

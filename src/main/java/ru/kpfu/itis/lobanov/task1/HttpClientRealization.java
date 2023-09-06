@@ -1,4 +1,4 @@
-package ru.kpfu.itis.lobanov;
+package ru.kpfu.itis.lobanov.task1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
