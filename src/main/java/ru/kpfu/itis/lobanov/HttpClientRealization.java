@@ -9,14 +9,14 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-public class HttpClientR implements HttpClient {
+public class HttpClientRealization implements HttpClient {
     private final String clientToken;
 
-    public HttpClientR() {
+    public HttpClientRealization() {
         this.clientToken = "";
     }
 
-    public HttpClientR(String clientToken) {
+    public HttpClientRealization(String clientToken) {
         this.clientToken = clientToken;
     }
 
@@ -76,7 +76,6 @@ public class HttpClientR implements HttpClient {
             while ((input = reader.readLine()) != null) {
                 content.append(input);
             }
-
         }
         connection.disconnect();
         return content.toString();
@@ -101,7 +100,6 @@ public class HttpClientR implements HttpClient {
             paramsLink.append("&");
         }
         paramsLink.deleteCharAt(paramsLink.length() - 1);
-
         return paramsLink.toString();
     }
 
@@ -116,7 +114,6 @@ public class HttpClientR implements HttpClient {
         }
         paramsJson.deleteCharAt(paramsJson.length() - 1);
         paramsJson.append('}');
-
         return paramsJson.toString();
     }
 }
